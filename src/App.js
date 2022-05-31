@@ -48,7 +48,10 @@ function App() {
     <div className="App">
       <Header />
       {error && <h1>Sayfayı Yenileyin.</h1>}
+      <Route path="/admin">
       <ProfileForm />
+      </Route>
+     
       <Switch>
       <Route path="/" exact>
       {advert.map(item => <Card name={item.name} key={item.id} id={item.id} lastname={item.lastname} />)}

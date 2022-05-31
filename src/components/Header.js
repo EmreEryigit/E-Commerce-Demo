@@ -1,7 +1,9 @@
-import React from "react";
+import React, {useContext} from "react";
 import { NavLink }  from "react-router-dom"
-function Header() {
+import AuthContext from "../store/auth-context";
 
+function Header() {
+  const authCtx = useContext(AuthContext)
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-light">
       <div className="container-fluid">
@@ -23,9 +25,15 @@ function Header() {
             <NavLink to="/" className="nav-link">
               Anasayfa
             </NavLink>
-            <NavLink  to="/new" className="nav-link" href="#">
+            {authCtx.isLoggedIn && <NavLink  to="/new" className="nav-link" href="#">
               New
+            </NavLink>}
+            
+            <NavLink to="/admin" className="nav-link">
+              Admin
             </NavLink>
+            
+            
             
             
           </div>

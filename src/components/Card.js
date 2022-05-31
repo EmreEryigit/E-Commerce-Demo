@@ -6,7 +6,7 @@ function Card(props) {
   return (
     <div
       id={props.id}
-      className="card d-inline-block mx-2"
+      className="card d-inline-block mx-2 shadow-lg"
       style={{ width: "18rem" }}
     >
       <div className="card-body">
