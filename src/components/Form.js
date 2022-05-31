@@ -3,12 +3,15 @@ import React,{useState} from 'react'
 function Form() {
     const [name, setName] = useState("")
     const [lastname, setLastname] = useState("")
-
+    const [img, setImg] = useState("")
     const nameChangeHandler = (e) => {
         setName(e.target.value)
     }
     const lastnameChangeHandler = (e) => {
         setLastname(e.target.value)
+    }
+    const imgChangeHandler = (e) => {
+        setImg(e.target.value)
     }
 
     const submitHandler = (e) => {
@@ -19,7 +22,8 @@ function Form() {
                 method: "POST",
                 body: JSON.stringify({
                     name: name,
-                    lastname: lastname
+                    lastname: lastname,
+                    img: img
                 }),
                 headers: {
                     "Content-Type" : "application/json"
@@ -30,6 +34,7 @@ function Form() {
         sendData()
         setLastname("")
         setName("")
+        setImg("")
         
     }
   return (
@@ -39,6 +44,8 @@ function Form() {
           <input type="text" id='name' name='name' value={name} onChange={nameChangeHandler} />
           <label htmlFor="lastname">Soyad</label>
           <input type="text" id='lastname' name='lastname' value={lastname}  onChange={lastnameChangeHandler} />
+          <label htmlFor="img">Fotoğraf URL</label>
+          <input type="text" name="img" id="img" onChange={imgChangeHandler}  value={img}/>
           <button>Submit</button>
       </form>
     </div>
