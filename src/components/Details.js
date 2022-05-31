@@ -3,7 +3,7 @@ import { useParams } from "react-router-dom";
 
 function Details(props) {
   const params = useParams();
-
+  
  
     const foundAdvert = props.adverts.filter(item => item.id === params.advertId)
     console.log(params.advertId)

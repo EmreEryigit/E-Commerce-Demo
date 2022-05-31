@@ -18,7 +18,7 @@ function Form() {
         e.preventDefault()
         console.log(name, lastname)
         const sendData = () => {
-            fetch("https://kodsitesi-972e6-default-rtdb.firebaseio.com/kodsitesi.json", {
+            fetch("https://advertsitev2-default-rtdb.europe-west1.firebasedatabase.app/kodsitesi.json", {
                 method: "POST",
                 body: JSON.stringify({
                     name: name,

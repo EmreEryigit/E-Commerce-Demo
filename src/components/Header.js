@@ -23,9 +23,9 @@ function Header() {
             <NavLink to="/" className="nav-link">
               Anasayfa
             </NavLink>
-            <a className="nav-link" href="#">
-              Features
-            </a>
+            <NavLink  to="/new" className="nav-link" href="#">
+              New
+            </NavLink>
             
             
           </div>
